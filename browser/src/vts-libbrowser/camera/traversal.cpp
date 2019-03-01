@@ -218,6 +218,12 @@ bool CameraImpl::travDetermineMeta(TraverseNode *trav)
             }
             else
                 topmost = &trav->layer->surfaceStack.surfaces[i];
+            // prototype to test the change in surface stack
+            if (n.childFlags() == 0)
+            {
+                for (uint32 j = i + 1; j < e; j++)
+                    metaTiles[j].reset();
+            }
         }
         if (!node)
             node = &n;
