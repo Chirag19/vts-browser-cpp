@@ -120,6 +120,7 @@ public:
     //   filtered and reordered
     bool searchResultsFiltering;
 
+    bool debugSurfaceStackClip; // experimental
     bool debugVirtualSurfaces;
     bool debugSaveCorruptedFiles;
     bool debugValidateGeodataStyles;

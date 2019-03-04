@@ -813,6 +813,16 @@ public:
                 c.debugDetachedCamera = nk_check_label(&ctx,
                                 "detached camera", c.debugDetachedCamera);
 
+                // surface stack clip
+                {
+                    bool old = mr.debugSurfaceStackClip;
+                    mr.debugSurfaceStackClip = nk_check_label(&ctx,
+                        "surface stack clip",
+                        mr.debugSurfaceStackClip);
+                    if (old != mr.debugSurfaceStackClip)
+                        window->map->purgeViewCache();
+                }
+
                 // virtual surfaces
                 {
                     bool old = mr.debugVirtualSurfaces;

@@ -91,6 +91,7 @@ MapRuntimeOptions::MapRuntimeOptions() :
     maxFetchRetries(5),
     fetchFirstRetryTimeOffset(1),
     searchResultsFiltering(true),
+    debugSurfaceStackClip(false),
     debugVirtualSurfaces(true),
     debugSaveCorruptedFiles(false),
     debugValidateGeodataStyles(true),
@@ -116,6 +117,7 @@ void MapRuntimeOptions::applyJson(const std::string &json)
     AJ(maxFetchRetries, asUInt);
     AJ(fetchFirstRetryTimeOffset, asUInt);
     AJ(searchResultsFiltering, asBool);
+    AJ(debugSurfaceStackClip, asBool);
     AJ(debugVirtualSurfaces, asBool);
     AJ(debugSaveCorruptedFiles, asBool);
     AJ(debugValidateGeodataStyles, asBool);
@@ -134,6 +136,7 @@ std::string MapRuntimeOptions::toJson() const
     TJ(maxFetchRetries, asUInt);
     TJ(fetchFirstRetryTimeOffset, asUInt);
     TJ(searchResultsFiltering, asBool);
+    TJ(debugSurfaceStackClip, asBool);
     TJ(debugVirtualSurfaces, asBool);
     TJ(debugSaveCorruptedFiles, asBool);
     TJ(debugValidateGeodataStyles, asBool);
